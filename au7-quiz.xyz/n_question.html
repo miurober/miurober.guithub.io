@@ -1,0 +1,335 @@
+<html>
+
+
+<!-- Mirrored from au7-quiz.xyz/n_question.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Nov 2022 21:26:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="public/common6512.css?11">
+  <script src="public/jquery-3.6.0.min.js"></script>
+  <script src="public/common1446.js?v=xxx"></script>
+      <script src="public/sweetalert-dev1446.js?v=xxx"></script>
+ <link rel="stylesheet" href="public/sweetalert.css">
+ <style>
+body {
+-webkit-touch-callout: none; 
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+</style>
+
+</head>
+
+
+<body>
+  <div class="Fc bfb">
+    <div class="mainbody">
+      <div id="menu" class="Frl mu" onclick="closeMenu()">
+        <div class="Fct mu-content" onclick="stopClick()">
+          <div class="Fct mu-top">
+            <div class="Frl mu-top-mid">
+              <div class="Fc mu-top-head">
+                <img id="userHead" class="mu-top-img" src="img/head.png" alt="">
+              </div>
+              <div class="mu-top-in">
+                <div id="userName" class="Tes mu-top-name"></div>	
+              </div>
+            </div>
+          </div>
+          <div class="Fc mu-list">
+            <div class="Frl mu-item" onclick="menuHome()">
+              <img class="mu-item-icon" src="img/Answer_pc_Home.png" alt="">
+              <span id="home" class="mu-item-name"></span>
+            </div>
+            <div class="Frl mu-item" onclick="menuUserArea()">
+              <img class="mu-item-icon" src="img/Answer_pc_User-area.png" alt="">
+              <span id="userarea" class="mu-item-name"></span>
+            </div>
+            <div class="Frl mu-item" onclick="menuSupport()">
+              <img class="mu-item-icon" src="img/Answer_pc_Support.png" alt="">
+              <span id="support" class="mu-item-name"></span>
+            </div>
+            <div class="Frl mu-item" onclick="menuFAQ()">
+              <img class="mu-item-icon" src="img/Answer_pc_F.A.Q.png" alt="">
+              <span id="faq" class="mu-item-name"></span>
+            </div>
+			<div class="Frl mu-item" onclick="menuLanguage()">
+              <img class="mu-item-icon" src="img/Answer_pc_Language.png" alt="">
+              <span class="mu-item-name">Language</span>
+            </div>
+            <div class="Frl mu-item" onclick="menuRule()">
+              <img class="mu-item-icon" src="img/Answer_pc_Rules.png" alt="">
+              <span id="rules" class="mu-item-name"></span>
+            </div>
+            <button class="mu-out" id="signin" onclick="menusignin()"></button>
+			      <button class="mu-out" id="signup" onclick="menusignup()"></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="maincontent">
+	  <div class="Frl cont-top">
+          <div  class="Frl" style="width:65%;">
+            <img class="cont-top-menu" src="img/Answer_7.png" onclick="openMenu()">
+            <span id="startquiz" class="cont-top-title"></span>
+          </div>
+          <div class="Frl" style="width:35%;justify-content:flex-end;">
+            <span id="signin2" onclick="location.href='signin.html'" style="line-height:0.6rem;height:0.6rem;padding:0 0.1rem 0 0.1rem;font-size:0.3em;border:#ffffff solid 1px;color:#ffffff" ></span>
+          </div>
+
+        </div>
+        <div class="Fc ques">
+          <div class="Fc ques-white">
+            <div class="Fc ques-logo">
+              <img id="productLogo" class="ques-logo-img" src="img/head.png" alt="">
+            </div>
+            <div id="productName" class="ques-title"></div>
+            <div class="Fc ques-down" style="display:none">
+              <div class="Fc ques-down-mid">
+                <div id="timeNum"  class="ques-down-num"></div>
+                <svg width="50" viewBox="0 0 220 220">
+                  <g transform="translate(110,110)">
+                    <circle r="100" class="e-c-base"></circle>
+                    <g transform="rotate(-90)">
+                      <circle r="100" class="e-c-progress"></circle>
+                      <g id="e-pointer"></g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div id="productMemo" class="ques-blank Fc" style="font-size: 0.3em;margin-top:0.1rem;"></div>
+            <div class="ques-id"><span id="subjectCurrent"></span>/<span id="subjectTotal"></span>.</div>
+            <!-- question -->
+            <div>
+              <div id="subjectProblem" class="ques-subject"></div>
+              <div id="subjectImage" class="Fc ques-subject-img1"></div>
+            </div>
+          </div>
+          <div class="Fc ques-score" style="display:none">
+            <span>
+              <span id="yous" class="ques-score1"></span>
+              <span id="yourScore" class="ques-score2"></span>
+            </span>
+          </div>
+          <!-- answer -->
+          <div id="option" style="margin-top:0.5rem;"></div>
+          <div class="Fc" style="width:90%;font-size: 0.4em;margin-top:0.5rem;">
+            <div style="width:100%;float:left">
+              <h4 style="margin-block-start: 0.2em;
+              margin-block-end: 0.2em;">
+                <span id="testKnow" style="color:yellow"></span>
+              </h4>
+            </div>
+            <div class="float:left;" style="color:#ffffff;font-size:0.8em;">
+              <ul class="buttet-list">
+                <li id="testTip1"></li>
+                <li id="testTip2"></li>
+                <li id="testTip3"></li>
+                <li id="testTip4"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+
+function getQueryVariable(variable) {
+    let query = window.location.search.substring(1);
+    let vars = query.split("&");
+    for (let i = 0; i < vars.length; i++) {
+      let pair = vars[i].split("=");
+      if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
+  }
+
+
+  let id = getQueryVariable('pkid')
+  console.log('pkid', id)
+
+  let product = {
+    id: id,
+    name: 'Business',
+    logo: './img/head.png',
+    time: 90,
+    coin: 4000,
+    score: 200
+  }
+
+function getscore(pkid,score){
+	
+    swal({title:tips.congratulations,text:"Você ganha $ 10, entre, entre para responder às perguntas e ganhe dinheiro facilmente.",type:"success",button: " OK "},function(){
+      window.location.href = "signinb2a1.html?score=" + score ;
+    });
+}
+
+
+  function update(value, timePercent) {
+    var offset = -length - length * value / (timePercent);
+    progressBar.style.strokeDashoffset = offset;
+    pointer.style.transform = `rotate(${360 * value / (timePercent)}deg)`;
+  }
+  var timer;
+  var progressBar = document.querySelector('.e-c-progress');
+  var pointer = document.getElementById('e-pointer');
+  var length = Math.PI * 2 * 100;
+  progressBar.style.strokeDasharray = length;
+  var wholeTime = product.time;// start countdown
+  $("#timeNum").html(wholeTime);
+  update(wholeTime, product.time);
+  function countDown() {
+    timer = setInterval(() => {
+      if (wholeTime > 0) {
+        wholeTime = wholeTime - 1
+        $("#timeNum").html(wholeTime);
+        update(wholeTime, product.time);
+      } else {
+        clearInterval(timer);
+        timer = null;
+		getscore(id,yourScore);
+        //window.location.href = "./result.php?score=" + yourScore + "&id="+id;
+      }
+    }, 1000)
+  }
+
+  var language ="en";
+  function getCookie(cname)
+  {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) 
+    {
+      var c = ca[i].trim();
+      if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    }
+    return "";
+  }
+    if(getCookie('loclang')!=""&&getCookie('loclang')!=undefined){
+      language=getCookie('loclang');
+    }else{
+      language = (navigator.browserLanguage || navigator.language).toLowerCase();
+      language = language.substr(0,2);
+    }
+    
+    jQuery.getScript( "language/test/"+language+".js", function(){
+
+      lang.forEach(element => {
+        if(element[0]=="title"){
+          document.title =element[1];
+        }else{
+          $("#"+element[0]).html(element[1]);
+        }
+      });
+      $("#subjectCurrent").html(current);
+      $("#subjectTotal").html(subject.length);
+      setSubject(subject[current - 1]);
+
+  } );
+
+
+    
+
+  var maskFlag = false 
+  var yourScore = 0;
+  $("#yourScore").html(yourScore);
+
+  var current = 1;
+
+
+  
+  function setSubject(item) {
+    item.problem = item.problem.replace(/\\'/g, "'");
+    item.problem = item.problem.replace(/\\"/g, '"');
+    $("#subjectProblem").html(item.problem);
+    if (item.image) {
+      $("#subjectImage").html(`<img class="ques-subject-img2" src="img/image/${item.image}" alt="">`);
+    } else {
+      $("#subjectImage").html('');
+    }
+    let optionStr = '';
+    $.each(item.answer, (i, v) => {
+      optionStr += `<div class="Frsb ques-option" style="margin-bottom:0.25rem" onclick="clickAnswer(${i},'${item.answer[i]}')">
+        <span>${item.answer[i].replace(/\\'/g, "'").replace(/\\"/g, '"')}</span>
+      </div>`
+    });
+    $("#option").html(optionStr);
+  }
+
+
+  // next
+  function nextQuestion() {
+    maskFlag = false
+    current = current + 1
+    if (current > subject.length) {
+      clearInterval(timer);
+      timer = null;
+      //window.location.href = "./result.php?score=" + yourScore + "&id="+id;
+	  getscore(id,yourScore);
+    } else {
+      $("#subjectCurrent").html(current);
+      setSubject(subject[current - 1])
+    }
+  }
+
+  // select answer
+  function clickAnswer(index, answer) {
+    if (!maskFlag) {
+      if (current == 1) {
+        countDown()// click to countdown
+      }
+      maskFlag = true
+      let correct = subject[current - 1].correct
+      if (answer == correct) {
+        let quesOption = document.getElementsByClassName('ques-option');
+        quesOption[index].classList.add('ques-option1');
+        let bqImg = document.createElement("img");
+        bqImg.src = "img/Answer_11.png";
+        bqImg.style.width = '0.6rem';
+        bqImg.style.height = '0.6rem';
+        quesOption[index].appendChild(bqImg);
+        yourScore = yourScore + product.score;
+        $("#yourScore").html(yourScore);
+        setTimeout(() => {
+          nextQuestion()// next
+        }, 2000)
+      } else {
+        let quesOption = document.getElementsByClassName('ques-option');
+        quesOption[index].classList.add('ques-option2');
+        let bqImg = document.createElement("img");
+        bqImg.src = "img/Answer_12.png";
+        bqImg.style.width = '0.6rem';
+        bqImg.style.height = '0.6rem';
+        quesOption[index].appendChild(bqImg);
+        setTimeout(() => {
+          nextQuestion() // next
+        }, 2000)
+      }
+    }
+  }
+
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192157945-11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-192157945-11');
+</script>
+
+
+<!-- Mirrored from au7-quiz.xyz/n_question.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Nov 2022 21:26:14 GMT -->
+</html>

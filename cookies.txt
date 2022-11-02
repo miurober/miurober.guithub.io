@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+au7-quiz.xyz	TRUE	/	FALSE	1999999999	loclang	pt
+ulogin.ru	TRUE	/	FALSE	1999999999	ulogin_token	uec0772d4cf2841c1677dcbb799c2e4a9
+au7-quiz.xyz	TRUE	/	FALSE	1999999999	pid	3
+
